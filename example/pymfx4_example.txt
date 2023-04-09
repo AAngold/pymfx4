@@ -1,0 +1,5 @@
+import pymfx4
+
+# connect to a MFX_4 EDI (Node=0). This function 
+# will return a tuple of devices.
+devices = pymfx4.mfconnection.mfx_endpoints("192.168.3.33:4003", [0]):
