@@ -36,6 +36,8 @@ class mfx4device:
     IxStoreParameterSaveAll = mff.FullIndex(0, 0x1010, 0x01)
     IxRestoreDefaultParametersIx = mff.FullIndex(0, 0x1011, 3)
 
+    IxAliveTime = mff.FullIndex(0, 0x200B, 14)
+
     # device soft reset
     DEVICE_REBOOT = 0x64616F6F
     DEVICE_SAVE_ALL_PARAMETERS = 0x65766173
@@ -113,6 +115,12 @@ class mfx4device:
         ds.storage.Get(FI)
         time.sleep(0.8)
         return ds.storage.GetNative(FI)
+    
+    def SetNotification(self, FI, Value, Func):
+        ds.storage.SetNotification(FI.Node(self.TheNode()), Value, Func)
+
+    def RemoveNotification(self, FI):
+        ds.storage.RemoveNotification(FI.Node(self.TheNode()))
 
     def DeployAndCheckEntrywise(self, package, iter=4):
         if isinstance(package, mfp.mfparameters):

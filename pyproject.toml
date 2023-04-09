@@ -1,6 +1,6 @@
 [project]
 name = "pymfx4"
-version = "0.1"
+version = "0.1.1"
 authors = [
   { name="Alexander Angold", email="pymfx4@infodb.eu" },
 ]

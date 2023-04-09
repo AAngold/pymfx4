@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
-
-# Learn more: https://github.com/kennethreitz/setup.py
-
 from setuptools import setup, find_packages
 
-
-with open('README.rst') as f:
+with open('README.md') as f:
     readme = f.read()
 
 with open('LICENSE') as f:
@@ -13,11 +9,11 @@ with open('LICENSE') as f:
 
 setup(
     name='pymfx4',
-    version='0.1.0',
+    version='0.1.1',
     description='Control of MFX_4 Series Devices',
     long_description=readme,
     author='Alexander Angold',
-    author_email='alexander@angold.eu',
+    author_email='pymfx4@infodb.eu',
     url='https://www.m-f.tech/',
     license=license,
     packages=find_packages(exclude=('tests', 'docs')),
